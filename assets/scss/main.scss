@@ -1,0 +1,106 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.header {
+	height: 6rem;
+	text-align: center;
+    font-family: $headerFont;
+	padding: 1.5rem;
+
+    h1, h2 {
+        font-size: 1rem;
+    }
+}
+
+.nav_links {
+	margin-top: $standardPadding;
+	display: flex;
+	justify-content: center;
+	margin-bottom: $standardPadding;
+	background-color: $accentColor;
+
+    li {
+        @include listStyle;
+
+        a {
+            @include listStyleLink;
+        }        
+    }
+}
+
+.main {
+    @include flexColumn;
+
+    .section_text > h3 {
+        text-align: center;
+    }
+    .section_text, .section_images {
+        margin: $standardPadding;
+    }
+    .section_images {
+        @include flexColumn;
+        
+        img {
+            height: 12rem;
+            width: 18rem;
+            margin: 0 0.5rem $standardPadding 0.5rem
+        }
+    }    
+}
+
+.aside {
+    @include flexColumn;
+	margin: $standardPadding;
+
+    .first_aside, .second_aside, .third_aside, .fourth_aside {
+        border: 0.2rem solid $accentColor;    
+        padding: $standardPadding;
+        margin-bottom: $standardPadding;
+    }    
+}
+
+.footer {
+	height: 5rem;
+	margin-top: $standardPadding;
+	background-color: $accentColor;
+
+    .footer_links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: $standardPadding;
+
+        li {
+            @include listStyle;
+    
+            a {
+                @include listStyleLink;
+            }        
+        }
+    }    
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+	.section_images {
+        @include flexRow;
+    }
+
+    .section_text {
+        width: 70%;
+    }
+
+    .aside {
+        @include flexRow;
+    }
+
+    .first_aside, .second_aside, .third_aside, .fourth_aside {
+        width: 45%;
+        margin: 0.5rem;
+    }
+}

@@ -1,0 +1,22 @@
+@mixin flexColumn {
+    display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flexRow {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+@mixin listStyle {
+    padding:$standardPadding;
+    list-style: none;
+}
+
+@mixin listStyleLink {
+    text-decoration: none;
+    color: black;
+    font-family: $sansFont;
+}
